@@ -1,15 +1,22 @@
 {
   "name": "vue-test-lib",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "build-library": "vue-cli-service build --target lib --name vue-test-simple ./src/install.js"
   },
+  "repository": "https://github.com/AlexLukakhin/vuetestlib.git",
+  "bugs": "https://github.com/AlexLukakhin/vuetestlib.git/issues",
   "dependencies": {
     "core-js": "^3.8.3",
     "vue": "^3.2.13"
   },
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-typescript": "~5.0.0",
