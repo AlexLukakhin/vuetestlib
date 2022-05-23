@@ -2,7 +2,7 @@
   <div class="hello">
     <h1 class="highlight">{{ textmsg }}</h1>
     <img src="../../assets/img/download.jpeg" @click="countNumber" />
-    <p>{{counter}}</p>
+    <p :style="{color: 'red'}">{{counter}}</p>
   </div>
 </template>
 
@@ -15,20 +15,31 @@ export default defineComponent({
   props: {
     msg: String
   },
-  setup() {
-    const textmsg = "I am Test World Component";
-    const selected = ref(new Date());
-    const counter = ref(0);
-    const countNumber = () => {
-      counter.value = counter.value + 1;
-    }
+  data() {
     return {
-      textmsg,
-      selected,
-      counter,
-      countNumber,
-    };
-  }
+      textmsg: 'I am Test World Compone',
+      counter: 22,
+    }
+  },
+  methods: {
+    countNumber() {
+          this.counter = this.counter + 5;
+        }
+  },
+  // setup() {
+  //   const textmsg = "I am Test World Component";
+  //   const selected = ref(new Date());
+  //   const counter = ref(0);
+  //   const countNumber = () => {
+  //     counter.value = counter.value + 1;
+  //   }
+  //   return {
+  //     textmsg,
+  //     selected,
+  //     counter,
+  //     countNumber,
+  //   };
+  // }
 });
 </script>
 
