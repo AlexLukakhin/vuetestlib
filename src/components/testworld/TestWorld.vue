@@ -6,7 +6,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent } from "vue";
 
 export default defineComponent({
@@ -22,7 +22,7 @@ export default defineComponent({
     }
   },
   methods: {
-    countNumber(): void{
+    countNumber(){
       this.counter = this.counter + 1;
     }
   },
