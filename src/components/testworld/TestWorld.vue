@@ -2,12 +2,12 @@
   <div class="hello">
     <h1 class="highlight">{{ textmsg }}</h1>
     <img src="../../assets/img/download.jpeg" @click="countNumber" />
-    <p>{{ counter }}</p>
+    <p>{{counter}}</p>
   </div>
 </template>
 
-<script>
-import { defineComponent } from "vue";
+<script lang="ts">
+import { defineComponent, ref } from "vue";
 
 export default defineComponent({
   name: "TestWorld",
@@ -15,31 +15,20 @@ export default defineComponent({
   props: {
     msg: String
   },
-  data() {
+  setup() {
+    const textmsg = "I am Test World Component";
+    const selected = ref(new Date());
+    const counter = ref(0);
+    const countNumber = (): void => {
+      counter.value = counter.value + 1;
+    }
     return {
-      textmsg: "I am Test World Component",
-      counter: 0
-    }
-  },
-  methods: {
-    countNumber(){
-      this.counter = this.counter + 1;
-    }
-  },
-  // setup() {
-  //   const textmsg = "I am Test World Component";
-  //   const selected = ref(new Date());
-  //   const counter = ref(0);
-  //   const countNumber = (): void => {
-  //     counter.value = counter.value + 1;
-  //   }
-  //   return {
-  //     textmsg,
-  //     selected,
-  //     counter,
-  //     countNumber,
-  //   };
-  // }
+      textmsg,
+      selected,
+      counter,
+      countNumber,
+    };
+  }
 });
 </script>
 
