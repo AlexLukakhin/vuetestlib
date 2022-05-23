@@ -6,7 +6,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent, ref } from "vue";
 
 export default defineComponent({
@@ -19,7 +19,7 @@ export default defineComponent({
     const textmsg = "I am Test World Component";
     const selected = ref(new Date());
     const counter = ref(0);
-    const countNumber = (): void => {
+    const countNumber = () => {
       counter.value = counter.value + 1;
     }
     return {
